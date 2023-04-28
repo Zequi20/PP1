@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de reservas</title>
+</head>
+<body>
+    <h1>Listado de reservas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha de entrada</th>
+                <th>Fecha de salida</th>
+                <th>Número de huéspedes</th>
+                <th>Tipo de habitación</th>
+                <th>Precio total</th>
+                <th>Estado de la reserva</th>
+                <th>Hotel</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reserva in reservas %}
+            <tr>
+                <td>{{ reserva.id }}</td>
+                <td>{{ reserva.fecha_entrada }}</td>
+                <td>{{ reserva.fecha_salida }}</td>
+                <td>{{ reserva.num_huespedes }}</td>
+                <td>{{ reserva.tipo_habitacion }}</td>
+                <td>{{ reserva.precio_total }}</td>
+                <td>{{ reserva.estado_reserva }}</td>
+                <td>{{ reserva.hotel.nombre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

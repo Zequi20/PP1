@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Reserva
 
-# Create your views here.
+def listado_reservas(request):
+    reservas = Reserva.objects.all()
+    return render(request, 'listado_reservas.html', {'reservas': reservas})
