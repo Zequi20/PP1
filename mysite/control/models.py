@@ -16,6 +16,7 @@ class Empleado(models.Model):
     horario_entrada = models.TimeField(null=False)
     horario_salida = models.TimeField(null=False)
 
+
 class Jornada(models.Model):
     identificador = models.CharField(max_length=50, unique=True)
     empleado = models.ForeignKey(Empleado, on_delete=models.CASCADE,  null=False)
@@ -28,5 +29,3 @@ class Jornada(models.Model):
 
   
 
-    class Meta:
-        ordering = ['fecha']
